@@ -1,6 +1,7 @@
-<img width="1634" height="475" alt="2DQCBM" src="https://github.com/user-attachments/assets/2f85e43b-ab66-4344-b5b6-e0139be24c07" />
 # QCBM-UPC
 Project for PHSX 801; A Quantum Circuit Born Machine that is to be trained on Ultra-Peripheral Collision Monte-Carlo data.   
+
+<img width="1634" height="475" alt="2DQCBM" src="https://github.com/user-attachments/assets/2f85e43b-ab66-4344-b5b6-e0139be24c07" />
 
 ## Repository Structure:
 - Start-up:
