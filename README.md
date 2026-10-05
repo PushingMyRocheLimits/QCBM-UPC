@@ -7,10 +7,10 @@ Project for PHSX 801; A Quantum Circuit Born Machine that is to be trained on Ul
 - Start-up:
   - Convert the `slight.out` ASCII file into a `.root` file using `code.py`
 - QCBM Simulations
-  - Run a 4-Qubit QCBM simulation for the 1D p_T spectra using `code.py`
-  - Run a 6-Qubit QCBM simulation for the 2D p_T and invariant mass spectra using `code.py`
+  - Run a 4-Qubit QCBM simulation for the 1D p_T spectra using `qcbm-project-4QB-sim.py`
+  - Run a 6-Qubit QCBM simulation for the 2D p_T and invariant mass spectra using `qcbm-project-6QB-sim.py`
 - QCBM for IBM Quantum Computer grid
-  - Run a 6-Qubit QCBM for the 2D p_t and invariant mass spectra on a real IBM QPU using `code.py`
+  - Run a 6-Qubit QCBM for the 2D p_t and invariant mass spectra on a real IBM QPU using `qcbm-project-6QB-Real.py`
 
 ## How to Run
 1) Install [STARlight](https://github.com/STARlightsim/STARlight) and make your desired MC dataset
