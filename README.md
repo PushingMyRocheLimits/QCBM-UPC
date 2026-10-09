@@ -6,10 +6,10 @@ Project for PHSX 801; A Quantum Circuit Born Machine that is to be trained on Ul
 ## Repository Structure:
 - Start-up:
   - Convert the `slight.out` ASCII file into a `.root` file using `tree_converter.C`
-- QCBM Simulations
+- QCBM Simulations for local hardware:
   - Run a 4-Qubit QCBM simulation for the 1D p_T spectra using `qcbm-project-4QB-sim.py`
   - Run a 6-Qubit QCBM simulation for the 2D p_T and invariant mass spectra using `qcbm-project-6QB-sim.py`
-- QCBM for IBM Quantum Computer grid
+- QCBM for IBM Quantum Computer grid:
   - Run a 6-Qubit QCBM for the 2D p_t and invariant mass spectra on a real IBM QPU using `qcbm-project-6QB-Real.py`
 
 ## How to Run
@@ -17,7 +17,7 @@ Project for PHSX 801; A Quantum Circuit Born Machine that is to be trained on Ul
 2) Install [ROOT](https://root.cern.ch/install/)
 3) Create a new virtual environment: `python -m venv qcbm_env`
 4) Activate the environment: `source qcbm_env/bin/activate`
-5) Install Qiskit, local simulators, and plotting/optimization tools: `pip install qiskit qiskit-aer qiskit-ibm-runtime scipy numpy matplotlib uproot awkward`
+5) Install Qiskit, local simulators, and plotting/optimization tools: `pip install qiskit qiskit-aer qiskit-ibm-runtime scipy numpy matplotlib uproot`
 6) Download desired QCBM code and place in same directory as MC dataset
 7) Run the `tree_converter.C` to convert the output of STARlight into something the QCBM code can read
 8) Run desired QCBM code using: `python3 ***.py`
