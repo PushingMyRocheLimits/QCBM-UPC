@@ -5,7 +5,7 @@ Project for PHSX 801; A Quantum Circuit Born Machine that is to be trained on Ul
 
 ## Repository Structure:
 - Start-up:
-  - Convert the `slight.out` ASCII file into a `.root` file using `code.py`
+  - Convert the `slight.out` ASCII file into a `.root` file using `tree_converter.C`
 - QCBM Simulations
   - Run a 4-Qubit QCBM simulation for the 1D p_T spectra using `qcbm-project-4QB-sim.py`
   - Run a 6-Qubit QCBM simulation for the 2D p_T and invariant mass spectra using `qcbm-project-6QB-sim.py`
