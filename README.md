@@ -14,9 +14,10 @@ Project for PHSX 801; A Quantum Circuit Born Machine that is to be trained on Ul
 
 ## How to Run
 1) Install [STARlight](https://github.com/STARlightsim/STARlight) and make your desired MC dataset
-2) Create a new virtual environment: `python -m venv qcbm_env`
-3) Activate the environment: `source qcbm_env/bin/activate`
-4) Install Qiskit, local simulators, and plotting/optimization tools: `pip install qiskit qiskit-aer qiskit-ibm-runtime scipy numpy matplotlib uproot awkward`
-5) Download desired QCBM code and place in same directory as MC dataset
-6) Run the `code.py` to convert the output of STARlight into something the QCBM code can read
-7) Run desired QCBM code using: `python3 ***.py`
+2) Install [ROOT](https://root.cern.ch/install/)
+3) Create a new virtual environment: `python -m venv qcbm_env`
+4) Activate the environment: `source qcbm_env/bin/activate`
+5) Install Qiskit, local simulators, and plotting/optimization tools: `pip install qiskit qiskit-aer qiskit-ibm-runtime scipy numpy matplotlib uproot awkward`
+6) Download desired QCBM code and place in same directory as MC dataset
+7) Run the `tree_converter.C` to convert the output of STARlight into something the QCBM code can read
+8) Run desired QCBM code using: `python3 ***.py`
