@@ -53,7 +53,7 @@ print(f"Loaded {len(pair_pt)} events from STARlight.")
 print(f"Target probabilities: {target_probs}")
 
 # ==========================================
-# 2. PHASE A: THE QUANTUM CIRCUIT (ANSATZ)
+# 2. THE QUANTUM CIRCUIT (ANSATZ)
 # ==========================================
 # Note: This should be valid for a variety of qubits (i.e. shouldn't need to change it w.r.t. # of qubits)
 def create_qcbm_ansatz(num_qubits, num_layers):
@@ -81,7 +81,7 @@ num_params = ansatz.num_parameters
 print(ansatz.draw())
 
 # ==========================================
-# 3. PHASE B: THE MMD LOSS FUNCTION
+# 3. THE MMD LOSS FUNCTION
 # ==========================================
 def compute_mixed_kernel(num_bins, sigmas=[0.25, 0.5, 1.0, 2.0]):
     # Precomputes a mixture of Gaussian kernels for better MMD gradients.
@@ -105,7 +105,7 @@ def mmd_loss(quantum_probs, target_probs, kernel_matrix):
     return max((term1 + term2 + term3).item(), 0.0)
 
 # ==========================================
-# 4. PHASE C: EXACT STATEVECTOR OPTIMIZATION
+# 4. EXACT STATEVECTOR OPTIMIZATION
 # ==========================================
 loss_history = []
 
@@ -139,12 +139,13 @@ optimal_theta = result.x
 print(f"\nOptimization finished! Final Loss: {result.fun:.6f}")
 
 # ==========================================
-# 5. PHASE D: NOISY HARDWARE EVALUATION
+# 5. NOISY HARDWARE EVALUATION
 # ==========================================
+# FakeManilaV2 has 5 Qubits
 print("\nTranspiling circuit for FakeManilaV2 and running noisy simulation...")
 fake_backend = FakeManilaV2()
 noisy_sampler = RuntimeSampler(mode=fake_backend)
-shots = 10000
+shots = 10000 # Increase this in the future
 
 # 1. Create a copy of the ansatz and add measurement gates for hardware execution
 measured_ansatz = ansatz.copy()
@@ -170,7 +171,7 @@ for bitstring, count in noisy_counts.items():
 final_noiseless_probs = Statevector(ansatz.assign_parameters(optimal_theta)).probabilities()
 
 # ==========================================
-# 6. VISUALIZATION
+# 6. Plotting
 # ==========================================
 fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(15, 5))
 

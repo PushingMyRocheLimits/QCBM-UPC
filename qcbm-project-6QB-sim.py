@@ -69,7 +69,7 @@ print(f"Loaded {len(pair_pt)} events from STARlight.")
 print(f"Target probabilities: {target_probs}")
 
 # ==========================================
-# 2. THE QUANTUM CIRCUIT (ANSATZ)
+# 2. THE QUANTUM CIRCUIT (or ANSATZ)
 # ==========================================
 # Note: This should be valid for a variety of qubits (i.e. shouldn't need to change it w.r.t. # of qubits)
 def create_qcbm_ansatz(num_qubits, num_layers):
@@ -98,7 +98,7 @@ print(ansatz.draw())
 ansatz.draw(output='mpl', filename='qcbm_ansatz.pdf')
 
 # ==========================================
-# 3. PHASE B: THE MMD LOSS FUNCTION
+# 3. THE MMD LOSS FUNCTION
 # ==========================================
 def compute_2d_mixed_kernel(bins_per_var, sigmas=[0.5, 1.0, 2.0]):
     total_states = bins_per_var**2
@@ -170,7 +170,7 @@ print(f"\nOptimization finished! Final Loss: {result.fun:.6f}")
 fake_backend = FakeOslo()
 noisy_sampler = RuntimeSampler(mode=fake_backend)
 print(f"\nTranspiling circuit for {type(fake_backend).backend_name} and running noisy simulation...")
-shots = 10000
+shots = 10000 # Need more in the future
 
 # 1. Create a copy of the ansatz and add measurement gates for hardware execution
 measured_ansatz = ansatz.copy()
@@ -196,7 +196,7 @@ for bitstring, count in noisy_counts.items():
 final_noiseless_probs = Statevector(ansatz.assign_parameters(optimal_theta)).probabilities()
 
 # ==========================================
-# 6. VISUALIZATION
+# 6. PLOTTING
 # ==========================================
 # Reshape the 1D arrays back into 2D grids
 target_grid = target_probs.reshape(bins_per_var, bins_per_var)
